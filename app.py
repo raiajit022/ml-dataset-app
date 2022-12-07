@@ -1,11 +1,5 @@
 import os
 import streamlit as st 
-import argparse
-import logging
-import sys
-
-from mymodule import my_function
-
 #EDA Packages
 import pandas as pd
 from pandas import DataFrame                                                                                             
@@ -154,7 +148,9 @@ def main():
         if st.button("Thanks"):
             st.balloons()
 
-
+    except Exception as e:
+    # Handle the exception
+        st.write("An error occurred: {}".format(e))
 
         if __name__ == '__main__':
             main()
