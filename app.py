@@ -164,13 +164,5 @@ def main():
         logging.debug('Calling my_function() with foo=%s', args.foo)
         my_function(args.foo)
 
-        # The following line imports a module called sys
-        import sys
-# The following line defines a function called main
-        def main():
-    # The following line prints a string
-        print('Hello there', sys.argv[0])
-# The following line checks to see if the script is the main program
-        #if __name__ == '__main__':
-    # The following line calls the main function
-       # main()
+        if __name__ == '__main__':
+            main()
