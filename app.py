@@ -38,8 +38,11 @@ def main():
 
         # Read Data
         if uploaded_file is not None:
-            df = pd.read_csv(filename)
-
+            try:
+                df = pd.read_csv(filename)
+            except Exception as e:
+                st.error(f"Error in reading file: {e}")
+                return
         # Show Dataset
 
         if st.checkbox("Show Dataset"):
@@ -152,17 +155,6 @@ def main():
             st.balloons()
 
 
-        
-
-        def main():
-            logging.basicConfig(level=logging.DEBUG)
-
-            parser = argparse.ArgumentParser()
-            parser.add_argument('--foo', required=True)
-            args = parser.parse_args()
-
-        logging.debug('Calling my_function() with foo=%s', args.foo)
-        my_function(args.foo)
 
         if __name__ == '__main__':
             main()
