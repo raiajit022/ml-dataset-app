@@ -10,8 +10,13 @@ import matplotlib
 matplotlib.use('Agg')
 import seaborn as sns 
 
-def main():
-    """ Common ML Dataset Explorer """
+def main(uploaded_file=None):
+    """ Common ML Dataset Explorer 
+
+    Returns
+    -------
+    object
+    """
     st.title("Common ML Dataset Explorer")
     st.subheader("Datasets For ML Explorer with Streamlit")
 
@@ -152,5 +157,5 @@ def main():
     # Handle the exception
         st.write("An error occurred: {}".format(e))
 
-        if __name__ == '__main__':
+        if __name__ == "__main__":
             main()
