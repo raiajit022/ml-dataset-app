@@ -33,7 +33,7 @@ def main():
 	# Show Dataset
 
 	if st.checkbox("Show Dataset"):
-		st.dataframe(df.head(int(st.number_input("Number of Rows to View"))))
+		st.dataframe(df.head(int(st.number_input("Number of Rows to View",min_value=1,step=1))))
 
 	# Show Columns
 	if st.button("Column Names"):
@@ -81,6 +81,7 @@ def main():
 	# Seaborn Plot
 	if st.checkbox("Correlation Plot[Seaborn]"):
 		st.write(sns.heatmap(df.corr(),annot=True))
+		st.set_option('deprecation.showPyplotGlobalUse', False)
 		st.pyplot()
 
 	
