@@ -33,8 +33,7 @@ def main():
 	# Show Dataset
 
 	if st.checkbox("Show Dataset"):
-		number = st.number_input("Number of Rows to View")
-		st.dataframe(df.head(number))
+		st.dataframe(df.head(st.number_input("Number of Rows to View")))
 
 	# Show Columns
 	if st.button("Column Names"):
