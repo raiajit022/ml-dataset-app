@@ -3,7 +3,7 @@ import streamlit as st
 
 # EDA Pkgs
 import pandas as pd 
-
+import numpy as np
 # Viz Pkgs
 import matplotlib.pyplot as plt 
 import matplotlib
@@ -148,9 +148,9 @@ def main():
 	st.sidebar.markdown("[Common ML Dataset Repo]("")")
 
 	st.sidebar.header("About")
-	st.sidebar.info("Jesus Saves@JCharisTech")
+	st.sidebar.info("This app allows you to easily explore and visualize your data, helping you to gain insights and understand trends")
 	st.sidebar.text("Built with Streamlit")
-	st.sidebar.text("Maintained by Jesse JCharis")
+	st.sidebar.text("Maintained by Ajit Rai")
 
 
 if __name__ == '__main__':
