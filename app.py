@@ -150,7 +150,7 @@ def main():
 	st.sidebar.header("About")
 	st.sidebar.info("This app allows you to easily explore and visualize your data, helping you to gain insights and understand trends.")
 	st.sidebar.text("Built with Streamlit")
-	st.sidebar.text("Maintained by Ajit Rai")
+	st.sidebar.text("Maintained by Ajit Rai(raiajit022@gmail.com)")
 
 
 if __name__ == '__main__':
