@@ -51,16 +51,16 @@ def main():
 		st.write(df.columns) # Display the column names of the DataFrame
 
 	# Show Shape
-	if st.checkbox("Shape of Dataset"):
-		data_dim = st.radio("Show Dimension By ",("Rows","Columns"))
-		if data_dim == 'Rows':
+	if st.checkbox("Shape of Dataset"): # If the "Shape of Dataset" checkbox is checked
+		data_dim = st.radio("Show Dimension By ",("Rows","Columns")) # Display a radio button to choose between showing the number of rows or columns
+		if data_dim == 'Rows': # If "Rows" is selected
 			st.text("Number of Rows")
-			st.write(df.shape[0])
-		elif data_dim == 'Columns':
-			st.text("Number of Columns")
-			st.write(df.shape[1])
-		else:
-			st.write(df.shape)
+			st.write(df.shape[0]) # Write the number of rows in the DataFrame
+		elif data_dim == 'Columns': # If "Columns" is selected
+			st.text("Number of Columns") 
+			st.write(df.shape[1]) # Write the number of columns in the DataFrame
+		else: # If neither "Rows" nor "Columns" is selected
+			st.write(df.shape) # Write the shape of the DataFrame (number of rows and columns)
 
 	# Select Columns
 	if st.checkbox("Select Columns To Show"):
