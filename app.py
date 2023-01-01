@@ -21,23 +21,34 @@ def main():
 	st.markdown(html_temp,unsafe_allow_html=True)
 
 	def file_selector(folder_path='./datasets'):
-		filenames = os.listdir(folder_path)
-		selected_filename = st.selectbox("Select A file",filenames)
-		return os.path.join(folder_path,selected_filename)
+		"""
+    Display a dropdown list of filenames in the specified folder and return the selected file.
+    
+    Parameters:
+        folder_path (str): Path to the folder containing the files. Default is './datasets'.
+        
+    Returns:
+        str: The selected file's full path.
+    """
+		filenames = os.listdir(folder_path) # Get a list of filenames in the specified folder
+		selected_filename = st.selectbox("Select A file",filenames) # Display a dropdown list of filenames and return the selected file
+		return os.path.join(folder_path,selected_filename) # Return the full path of the selected file
 
-	filename = file_selector()
-	st.info("You Selected {}".format(filename))
+	filename = file_selector() # Select a file
+	st.info("You Selected {}".format(filename)) # Display a message with the selected file
 
 	# Read Data
-	df = pd.read_csv(filename)
+	df = pd.read_csv(filename) # Read the CSV file into a Pandas DataFrame
+
 	# Show Dataset
 
-	if st.checkbox("Show Dataset"):
-		st.dataframe(df.head(int(st.number_input("Number of Rows to View",min_value=1,step=1))))
+	if st.checkbox("Show Dataset"): # If the "Show Dataset" checkbox is checked
+		st.dataframe(df.head(int(st.number_input("Number of Rows to View",min_value=1,step=1)))) # Display the data from the file as a Pandas DataFrame
+
 
 	# Show Columns
-	if st.button("Column Names"):
-		st.write(df.columns)
+	if st.button("Column Names"):  # If the "Column Names" button is clicked
+		st.write(df.columns) # Display the column names of the DataFrame
 
 	# Show Shape
 	if st.checkbox("Shape of Dataset"):
